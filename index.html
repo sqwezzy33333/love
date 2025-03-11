@@ -664,7 +664,7 @@
                         const script = document.createElement('script');
                         script.src = 'https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js';
                         document.head.appendChild(script);
-                        script.onload = () => {
+                        script.addEventListener('load', () => {
                             alert('script loaded');
 
                             alert($);
