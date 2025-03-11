@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <title>Электронное
-    приглашение</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Электронное
+        приглашение</title>
     <meta name="description" content="Приглашение на нашу свадьбу"/>
     <meta property="og:title" content="Электронное приглашение"/>
     <meta property="og:description" content="Приглашение на нашу свадьбу"/>
@@ -720,70 +721,52 @@
                                 }
 
 
-                                if (true) {
-                                    setInterval(timer, 1e3);
-                                    timer();
+                                setInterval(timer, 1e3);
+                                timer();
 
-                                    function timer() {
-                                        let timeLeft = diffTZ ? parseInt((Date.parse(date) - (Date.now() - offsetTZUser * 60 * 60 * 1000)) / 1000) : parseInt((Date.parse(date) - (Date.now() + offsetTZUser * 60 * 60 * 1000)) / 1000),
-                                            days = Math.floor(timeLeft / 86400),
-                                            hours = Math.floor((timeLeft - ($days ? (days * 86400) : !$days && !true ? (days * 86400) : 0)) / 3600),
-                                            minutes = Math.floor(((timeLeft - ($days ? (days * 86400) : !$days && !true ? (days * 86400) : 0) - ($hours ? hours * 3600 : !$days && !true ? hours * 3600 : 0)) / 60)),
-                                            seconds = Math.floor((timeLeft - ($days ? (days * 86400) : !$days && !true ? (days * 86400) : 0) - ($hours ? hours * 3600 : !$days && !true ? hours * 3600 : 0) - ($minutes ? minutes * 60 : !$days && !true ? minutes * 60 : 0)));
-                                        let hoursB = hours, minutesB = minutes, secondsB = seconds;
-                                        if (true && days < "10") {
-                                            days = "0" + days;
-                                        }
-                                        if (hours < "10") {
-                                            hours = "0" + hours;
-                                        }
-                                        if (minutes < "10") {
-                                            minutes = "0" + minutes;
-                                        }
-                                        if (seconds < "10") {
-                                            seconds = "0" + seconds;
-                                        }
-                                        if (!nullTime()) {
-                                            days = hours = minutes = seconds = hoursB = minutesB = secondsB = 0;
-                                        }
-                                        if ($days) $days.text(days);
-                                        if ($daysText) $daysText.text(declOfNum(days, [daysText1, daysText2, daysText5]));
-                                        if ($hours) $hours.text(hours);
-                                        if ($hoursText) $hoursText.text(declOfNum(hoursB, [hoursText1, hoursText2, hoursText5]));
-                                        if ($minutes) $minutes.text(minutes);
-                                        if ($minutesText) $minutesText.text(declOfNum(minutesB, [minutesText1, minutesText2, minutesText5]));
-                                        if ($seconds) $seconds.text(seconds);
-                                        if ($secondsText) $secondsText.text(declOfNum(secondsB, [secondsText1, secondsText2, secondsText5]));
-                                        if (!rend) {
-                                            rend = true;
-                                            if ($days) $('.tn-elem__8471337711676524966139').css('display', 'table');
-                                            if ($daysText) $('.tn-elem__8471337711676524992221').css('display', 'table');
-                                            if ($hours) $('.tn-elem__8471337711676524978902').css('display', 'table');
-                                            if ($hoursText) $('.tn-elem__8471337711676525012432').css('display', 'table');
-                                            if ($minutes) $('.tn-elem__8471337711676524982032').css('display', 'table');
-                                            if ($minutesText) $('.tn-elem__8471337711676525020204').css('display', 'table');
-                                            if ($seconds) $('.tn-elem__8471337711676524983828').css('display', 'table');
-                                            if ($secondsText) $('.tn-elem__8471337711676525030457').css('display', 'table');
-                                        }
+                                function timer() {
+                                    let timeLeft = diffTZ ? parseInt((Date.parse(date) - (Date.now() - offsetTZUser * 60 * 60 * 1000)) / 1000) : parseInt((Date.parse(date) - (Date.now() + offsetTZUser * 60 * 60 * 1000)) / 1000),
+                                        days = Math.floor(timeLeft / 86400),
+                                        hours = Math.floor((timeLeft - ($days ? (days * 86400) : !$days && !true ? (days * 86400) : 0)) / 3600),
+                                        minutes = Math.floor(((timeLeft - ($days ? (days * 86400) : !$days && !true ? (days * 86400) : 0) - ($hours ? hours * 3600 : !$days && !true ? hours * 3600 : 0)) / 60)),
+                                        seconds = Math.floor((timeLeft - ($days ? (days * 86400) : !$days && !true ? (days * 86400) : 0) - ($hours ? hours * 3600 : !$days && !true ? hours * 3600 : 0) - ($minutes ? minutes * 60 : !$days && !true ? minutes * 60 : 0)));
+                                    let hoursB = hours, minutesB = minutes, secondsB = seconds;
+                                    if (true && days < "10") {
+                                        days = "0" + days;
                                     }
-                                } else {
-                                    if ($days) $days.text(0);
-                                    if ($hours) $hours.text(0);
-                                    if ($minutes) $minutes.text(0);
-                                    if ($seconds) $seconds.text(0);
-                                    if ($daysText) $daysText.text(declOfNum(0, [daysText1, daysText2, daysText5]));
-                                    if ($hoursText) $hoursText.text(declOfNum(0, [hoursText1, hoursText2, hoursText5]));
-                                    if ($minutesText) $minutesText.text(declOfNum(0, [minutesText1, minutesText2, minutesText5]));
-                                    if ($secondsText) $secondsText.text(declOfNum(0, [secondsText1, secondsText2, secondsText5]));
-                                    if ($days) $('.tn-elem__8471337711676524966139').css('display', 'table');
-                                    if ($daysText) $('.tn-elem__8471337711676524992221').css('display', 'table');
-                                    if ($hours) $('.tn-elem__8471337711676524978902').css('display', 'table');
-                                    if ($hoursText) $('.tn-elem__8471337711676525012432').css('display', 'table');
-                                    if ($minutes) $('.tn-elem__8471337711676524982032').css('display', 'table');
-                                    if ($minutesText) $('.tn-elem__8471337711676525020204').css('display', 'table');
-                                    if ($seconds) $('.tn-elem__8471337711676524983828').css('display', 'table');
-                                    if ($secondsText) $('.tn-elem__8471337711676525030457').css('display', 'table');
+                                    if (hours < "10") {
+                                        hours = "0" + hours;
+                                    }
+                                    if (minutes < "10") {
+                                        minutes = "0" + minutes;
+                                    }
+                                    if (seconds < "10") {
+                                        seconds = "0" + seconds;
+                                    }
+                                    if (!nullTime()) {
+                                        days = hours = minutes = seconds = hoursB = minutesB = secondsB = 0;
+                                    }
+                                    if ($days) $days.text(days);
+                                    if ($daysText) $daysText.text(declOfNum(days, [daysText1, daysText2, daysText5]));
+                                    if ($hours) $hours.text(hours);
+                                    if ($hoursText) $hoursText.text(declOfNum(hoursB, [hoursText1, hoursText2, hoursText5]));
+                                    if ($minutes) $minutes.text(minutes);
+                                    if ($minutesText) $minutesText.text(declOfNum(minutesB, [minutesText1, minutesText2, minutesText5]));
+                                    if ($seconds) $seconds.text(seconds);
+                                    if ($secondsText) $secondsText.text(declOfNum(secondsB, [secondsText1, secondsText2, secondsText5]));
+                                    if (!rend) {
+                                        rend = true;
+                                        if ($days) $('.tn-elem__8471337711676524966139').css('display', 'table');
+                                        if ($daysText) $('.tn-elem__8471337711676524992221').css('display', 'table');
+                                        if ($hours) $('.tn-elem__8471337711676524978902').css('display', 'table');
+                                        if ($hoursText) $('.tn-elem__8471337711676525012432').css('display', 'table');
+                                        if ($minutes) $('.tn-elem__8471337711676524982032').css('display', 'table');
+                                        if ($minutesText) $('.tn-elem__8471337711676525020204').css('display', 'table');
+                                        if ($seconds) $('.tn-elem__8471337711676524983828').css('display', 'table');
+                                        if ($secondsText) $('.tn-elem__8471337711676525030457').css('display', 'table');
+                                    }
                                 }
+
                                 window.dispatchEvent(new CustomEvent('resize'));
                             }, 500);
                         });
@@ -1964,7 +1947,8 @@
                     </div>
                     <div class="t795__descr t-descr t-descr_xl t-margin_auto t-animate" data-animate-style="fadeinup"
                          data-animate-group="yes" data-animate-order="2" data-animate-delay="0.3" field="descr">
-                        Наша свадьба пройдёт на базе отдыха «Мечта» по адресу Мозырский район, Прудковский с/с 4/2, Мозырь 247760, Беларусь <br> <br>
+                        Наша свадьба пройдёт на базе отдыха «Мечта» по адресу Мозырский район, Прудковский с/с 4/2,
+                        Мозырь 247760, Беларусь <br> <br>
                         Дорогие гости!
                         Для вашего удобства в день торжества будет организован трансфер.
                     </div>
@@ -2174,7 +2158,8 @@
             <div class="t-container t-align_center">
                 <div class="t-col t-col_10 t-prefix_1">
                     <div class="t795__title t-title t-title_xs t-margin_auto t-animate" data-animate-style="fadeinup"
-                         data-animate-group="yes" data-animate-order="1" field="title">Будем рады видеть вас на нашей свадьбе! Пожалуйста, сообщите о возможности вашего присутствия до 30 апреля 2025 года.
+                         data-animate-group="yes" data-animate-order="1" field="title">Будем рады видеть вас на нашей
+                        свадьбе! Пожалуйста, сообщите о возможности вашего присутствия до 30 апреля 2025 года.
                     </div>
                     <div class="t795__descr t-descr t-descr_xl t-margin_auto t-animate" data-animate-style="fadeinup"
                          data-animate-group="yes" data-animate-order="2" data-animate-delay="0.3" field="descr">
@@ -2198,7 +2183,8 @@
             <div class="t-container t-align_center">
                 <div class="t-col t-col_10 t-prefix_1">
                     <div class="t795__title t-title t-title_xs t-margin_auto t-animate" data-animate-style="fadeinup"
-                         data-animate-group="yes" data-animate-order="1" field="title">Будем рады видеть вас на нашей свадьбе! Пожалуйста, сообщите о возможности вашего присутствия до 30 апреля 2025 года.
+                         data-animate-group="yes" data-animate-order="1" field="title">Будем рады видеть вас на нашей
+                        свадьбе! Пожалуйста, сообщите о возможности вашего присутствия до 30 апреля 2025 года.
                     </div>
                     <div class="t795__descr t-descr t-descr_xl t-margin_auto t-animate" data-animate-style="fadeinup"
                          data-animate-group="yes" data-animate-order="2" data-animate-delay="0.3" field="descr">
