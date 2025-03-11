@@ -682,6 +682,10 @@
                     }
 
                     getScript("https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js").then(function () {
+
+                        alert('count');
+
+                        alert($);
                         jQuery('head').append('<style>' + (function () {
                             return ".tn-elem__8471337711676524966139 , .tn-elem__8471337711676524992221 , .tn-elem__8471337711676524978902 , .tn-elem__8471337711676525012432 , .tn-elem__8471337711676524982032 , .tn-elem__8471337711676525020204 , .tn-elem__8471337711676524983828 , .tn-elem__8471337711676525030457".replace(/\s/g, "").split(/,\s|,/g).filter(function (e) {
                                 return e
@@ -762,7 +766,6 @@
                                         if ($seconds) $('.tn-elem__8471337711676524983828').css('display', 'table');
                                         if ($secondsText) $('.tn-elem__8471337711676525030457').css('display', 'table');
                                     }
-                                    alert('count');
                                 }
 
                                 window.dispatchEvent(new CustomEvent('resize'));
