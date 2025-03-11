@@ -743,9 +743,6 @@
                                     if (seconds < "10") {
                                         seconds = "0" + seconds;
                                     }
-                                    if (!nullTime()) {
-                                        days = hours = minutes = seconds = hoursB = minutesB = secondsB = 0;
-                                    }
                                     if ($days) $days.text(days);
                                     if ($daysText) $daysText.text(declOfNum(days, [daysText1, daysText2, daysText5]));
                                     if ($hours) $hours.text(hours);
