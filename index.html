@@ -661,8 +661,6 @@
             <div class="t-container_100">
                 <div class="t-width t-width_100">
                     <script>
-                        alert('init');
-
                         function getScript(url) {
                             return new Promise(function (resolve, reject) {
                                 if (window.anxJqueryLoad) {
@@ -677,8 +675,14 @@
                                     var script = document.createElement('script');
                                     script.src = url;
                                     script.async = true;
-                                    script.onload = resolve;
-                                    script.onerror = reject;
+                                    script.onload = (success) => {
+                                        alert('success');
+                                        resolve();
+                                    };
+                                    script.onerror = (error) => {
+                                        alert(error);
+                                        reject();
+                                    };
                                     document.head.appendChild(script);
                                 }
                             });
