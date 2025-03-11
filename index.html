@@ -664,10 +664,6 @@
                         const script = document.createElement('script');
                         script.src = 'https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js';
                         document.head.appendChild(script);
-                        alert(script);
-                        script.onerror = (e) => {
-                            alert(e);
-                        }
                         script.onload = () => {
                             alert('script loaded');
 
@@ -705,16 +701,16 @@
                                         }()), tzScript = (date.getTimezoneOffset() / 60) - tz,
                                         diffTZ = tzScript <= 0 ? true : false,
                                         offsetTZUser = diffTZ ? 0 - tzScript : 0 + tzScript, rend = false;
-
                                     function declOfNum(number, words) {
                                         return words[(number % 100 > 4 && number % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(number % 10 < 5) ? Math.abs(number) % 10 : 5]];
                                     }
 
-
+                                    alert('before_alert')
                                     setInterval(timer, 1e3);
                                     timer();
 
                                     function timer() {
+                                        alert('timer')
                                         let timeLeft = diffTZ ? parseInt((Date.parse(date) - (Date.now() - offsetTZUser * 60 * 60 * 1000)) / 1000) : parseInt((Date.parse(date) - (Date.now() + offsetTZUser * 60 * 60 * 1000)) / 1000),
                                             days = Math.floor(timeLeft / 86400),
                                             hours = Math.floor((timeLeft - ($days ? (days * 86400) : !$days && !true ? (days * 86400) : 0)) / 3600),
