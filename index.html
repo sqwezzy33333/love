@@ -661,35 +661,10 @@
             <div class="t-container_100">
                 <div class="t-width t-width_100">
                     <script>
-                        function getScript(url) {
-                            return new Promise(function (resolve, reject) {
-                                if (window.anxJqueryLoad) {
-                                    let int = setInterval(() => {
-                                        if ((window.jQuery || window.$) && /jquery@/.test(url)) {
-                                            clearInterval(int);
-                                            resolve();
-                                        }
-                                    }, 100);
-                                } else {
-                                    window.anxJqueryLoad = true;
-                                    var script = document.createElement('script');
-                                    script.src = url;
-                                    script.async = true;
-                                    script.onload = (success) => {
-                                        alert('success');
-                                        resolve();
-                                    };
-                                    script.onerror = (error) => {
-                                        alert(error);
-                                        reject();
-                                    };
-                                    document.head.appendChild(script);
-                                }
-                            });
-                        }
-
-                        getScript("https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js").then(function () {
-
+                        const script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js';
+                        document.head.appendChild(script);
+                        script.onload = () => {
                             alert('count');
 
                             alert($);
@@ -778,7 +753,9 @@
                                     window.dispatchEvent(new CustomEvent('resize'));
                                 }, 500);
                             });
-                        });</script> <!-- nominify end --> </div>
+                        }
+                    </script>
+                </div>
             </div>
         </div>
     </div>
