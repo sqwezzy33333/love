@@ -661,94 +661,92 @@
             <div class="t-container_100">
                 <div class="t-width t-width_100">
                     <script>
-                        const script = document.createElement('script');
-                        script.src = 'https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js';
-                        document.head.appendChild(script);
-                        script.addEventListener('load', () => {
-                            jQuery('head').append('<style>' + (function () {
-                                return ".tn-elem__8471337711676524966139 , .tn-elem__8471337711676524992221 , .tn-elem__8471337711676524978902 , .tn-elem__8471337711676525012432 , .tn-elem__8471337711676524982032 , .tn-elem__8471337711676525020204 , .tn-elem__8471337711676524983828 , .tn-elem__8471337711676525030457".replace(/\s/g, "").split(/,\s|,/g).filter(function (e) {
-                                    return e
-                                }).join(",");
-                            }()) + ' { display: none; }</style>');
-                            $(function () {
-                                setTimeout(function () {
-                                    let $days = $('.tn-elem__8471337711676524966139').length ? $('.tn-elem__8471337711676524966139').find('.tn-atom') : false,
-                                        $daysText = $('.tn-elem__8471337711676524992221').length ? $('.tn-elem__8471337711676524992221').find('.tn-atom') : false,
-                                        daysText1 = 'день' ? 'день' : 'день', daysText2 = 'дня' ? 'дня' : 'дня',
-                                        daysText5 = 'дней' ? 'дней' : 'дней',
-                                        $hours = $('.tn-elem__8471337711676524978902').length ? $('.tn-elem__8471337711676524978902').find('.tn-atom') : false,
-                                        $hoursText = $('.tn-elem__8471337711676525012432').length ? $('.tn-elem__8471337711676525012432').find('.tn-atom') : false,
-                                        hoursText1 = 'час' ? 'час' : 'час', hoursText2 = 'часа' ? 'часа' : 'часа',
-                                        hoursText5 = 'часов' ? 'часов' : 'часов',
-                                        $minutes = $('.tn-elem__8471337711676524982032').length ? $('.tn-elem__8471337711676524982032').find('.tn-atom') : false,
-                                        $minutesText = $('.tn-elem__8471337711676525020204').length ? $('.tn-elem__8471337711676525020204').find('.tn-atom') : false,
-                                        minutesText1 = 'минута' ? 'минута' : 'минута',
-                                        minutesText2 = 'минуты' ? 'минуты' : 'минуты',
-                                        minutesText5 = 'минут' ? 'минут' : 'минут',
-                                        $seconds = $('.tn-elem__8471337711676524983828').length ? $('.tn-elem__8471337711676524983828').find('.tn-atom') : false,
-                                        $secondsText = $('.tn-elem__8471337711676525030457').length ? $('.tn-elem__8471337711676525030457').find('.tn-atom') : false,
-                                        secondsText1 = 'секунда' ? 'секунда' : 'секунда',
-                                        secondsText2 = 'секунды' ? 'секунды' : 'секунды',
-                                        secondsText5 = 'секунд' ? 'секунд' : 'секунд',
-                                        date = new Date(('2025-08-02 15:30').replace(/-/g, "/")), tz = (function () {
-                                            let tz = "minus3";
-                                            if (/plus/.test(tz)) {
-                                                return +tz.replace('plus', '+');
-                                            } else return +tz.replace('minus', '-');
-                                        }()), tzScript = (date.getTimezoneOffset() / 60) - tz,
-                                        diffTZ = tzScript <= 0 ? true : false,
-                                        offsetTZUser = diffTZ ? 0 - tzScript : 0 + tzScript, rend = false;
-                                    function declOfNum(number, words) {
-                                        return words[(number % 100 > 4 && number % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(number % 10 < 5) ? Math.abs(number) % 10 : 5]];
+
+                        jQuery('head').append('<style>' + (function () {
+                            return ".tn-elem__8471337711676524966139 , .tn-elem__8471337711676524992221 , .tn-elem__8471337711676524978902 , .tn-elem__8471337711676525012432 , .tn-elem__8471337711676524982032 , .tn-elem__8471337711676525020204 , .tn-elem__8471337711676524983828 , .tn-elem__8471337711676525030457".replace(/\s/g, "").split(/,\s|,/g).filter(function (e) {
+                                return e
+                            }).join(",");
+                        }()) + ' { display: none; }</style>');
+                        $(function () {
+                            setTimeout(function () {
+                                let $days = $('.tn-elem__8471337711676524966139').length ? $('.tn-elem__8471337711676524966139').find('.tn-atom') : false,
+                                    $daysText = $('.tn-elem__8471337711676524992221').length ? $('.tn-elem__8471337711676524992221').find('.tn-atom') : false,
+                                    daysText1 = 'день' ? 'день' : 'день', daysText2 = 'дня' ? 'дня' : 'дня',
+                                    daysText5 = 'дней' ? 'дней' : 'дней',
+                                    $hours = $('.tn-elem__8471337711676524978902').length ? $('.tn-elem__8471337711676524978902').find('.tn-atom') : false,
+                                    $hoursText = $('.tn-elem__8471337711676525012432').length ? $('.tn-elem__8471337711676525012432').find('.tn-atom') : false,
+                                    hoursText1 = 'час' ? 'час' : 'час', hoursText2 = 'часа' ? 'часа' : 'часа',
+                                    hoursText5 = 'часов' ? 'часов' : 'часов',
+                                    $minutes = $('.tn-elem__8471337711676524982032').length ? $('.tn-elem__8471337711676524982032').find('.tn-atom') : false,
+                                    $minutesText = $('.tn-elem__8471337711676525020204').length ? $('.tn-elem__8471337711676525020204').find('.tn-atom') : false,
+                                    minutesText1 = 'минута' ? 'минута' : 'минута',
+                                    minutesText2 = 'минуты' ? 'минуты' : 'минуты',
+                                    minutesText5 = 'минут' ? 'минут' : 'минут',
+                                    $seconds = $('.tn-elem__8471337711676524983828').length ? $('.tn-elem__8471337711676524983828').find('.tn-atom') : false,
+                                    $secondsText = $('.tn-elem__8471337711676525030457').length ? $('.tn-elem__8471337711676525030457').find('.tn-atom') : false,
+                                    secondsText1 = 'секунда' ? 'секунда' : 'секунда',
+                                    secondsText2 = 'секунды' ? 'секунды' : 'секунды',
+                                    secondsText5 = 'секунд' ? 'секунд' : 'секунд',
+                                    date = new Date(('2025-08-02 15:30').replace(/-/g, "/")), tz = (function () {
+                                        let tz = "minus3";
+                                        if (/plus/.test(tz)) {
+                                            return +tz.replace('plus', '+');
+                                        } else return +tz.replace('minus', '-');
+                                    }()), tzScript = (date.getTimezoneOffset() / 60) - tz,
+                                    diffTZ = tzScript <= 0 ? true : false,
+                                    offsetTZUser = diffTZ ? 0 - tzScript : 0 + tzScript, rend = false;
+
+                                function declOfNum(number, words) {
+                                    return words[(number % 100 > 4 && number % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(number % 10 < 5) ? Math.abs(number) % 10 : 5]];
+                                }
+
+                                setInterval(timer, 1e3);
+                                timer();
+
+                                function timer() {
+                                    let timeLeft = diffTZ ? parseInt((Date.parse(date) - (Date.now() - offsetTZUser * 60 * 60 * 1000)) / 1000) : parseInt((Date.parse(date) - (Date.now() + offsetTZUser * 60 * 60 * 1000)) / 1000),
+                                        days = Math.floor(timeLeft / 86400),
+                                        hours = Math.floor((timeLeft - ($days ? (days * 86400) : !$days && !true ? (days * 86400) : 0)) / 3600),
+                                        minutes = Math.floor(((timeLeft - ($days ? (days * 86400) : !$days && !true ? (days * 86400) : 0) - ($hours ? hours * 3600 : !$days && !true ? hours * 3600 : 0)) / 60)),
+                                        seconds = Math.floor((timeLeft - ($days ? (days * 86400) : !$days && !true ? (days * 86400) : 0) - ($hours ? hours * 3600 : !$days && !true ? hours * 3600 : 0) - ($minutes ? minutes * 60 : !$days && !true ? minutes * 60 : 0)));
+                                    let hoursB = hours, minutesB = minutes, secondsB = seconds;
+                                    if (true && days < "10") {
+                                        days = "0" + days;
                                     }
-
-                                    setInterval(timer, 1e3);
-                                    timer();
-
-                                    function timer() {
-                                        let timeLeft = diffTZ ? parseInt((Date.parse(date) - (Date.now() - offsetTZUser * 60 * 60 * 1000)) / 1000) : parseInt((Date.parse(date) - (Date.now() + offsetTZUser * 60 * 60 * 1000)) / 1000),
-                                            days = Math.floor(timeLeft / 86400),
-                                            hours = Math.floor((timeLeft - ($days ? (days * 86400) : !$days && !true ? (days * 86400) : 0)) / 3600),
-                                            minutes = Math.floor(((timeLeft - ($days ? (days * 86400) : !$days && !true ? (days * 86400) : 0) - ($hours ? hours * 3600 : !$days && !true ? hours * 3600 : 0)) / 60)),
-                                            seconds = Math.floor((timeLeft - ($days ? (days * 86400) : !$days && !true ? (days * 86400) : 0) - ($hours ? hours * 3600 : !$days && !true ? hours * 3600 : 0) - ($minutes ? minutes * 60 : !$days && !true ? minutes * 60 : 0)));
-                                        let hoursB = hours, minutesB = minutes, secondsB = seconds;
-                                        if (true && days < "10") {
-                                            days = "0" + days;
-                                        }
-                                        if (hours < "10") {
-                                            hours = "0" + hours;
-                                        }
-                                        if (minutes < "10") {
-                                            minutes = "0" + minutes;
-                                        }
-                                        if (seconds < "10") {
-                                            seconds = "0" + seconds;
-                                        }
-                                        if ($days) $days.text(days);
-                                        if ($daysText) $daysText.text(declOfNum(days, [daysText1, daysText2, daysText5]));
-                                        if ($hours) $hours.text(hours);
-                                        if ($hoursText) $hoursText.text(declOfNum(hoursB, [hoursText1, hoursText2, hoursText5]));
-                                        if ($minutes) $minutes.text(minutes);
-                                        if ($minutesText) $minutesText.text(declOfNum(minutesB, [minutesText1, minutesText2, minutesText5]));
-                                        if ($seconds) $seconds.text(seconds);
-                                        if ($secondsText) $secondsText.text(declOfNum(secondsB, [secondsText1, secondsText2, secondsText5]));
-                                        if (!rend) {
-                                            rend = true;
-                                            if ($days) $('.tn-elem__8471337711676524966139').css('display', 'table');
-                                            if ($daysText) $('.tn-elem__8471337711676524992221').css('display', 'table');
-                                            if ($hours) $('.tn-elem__8471337711676524978902').css('display', 'table');
-                                            if ($hoursText) $('.tn-elem__8471337711676525012432').css('display', 'table');
-                                            if ($minutes) $('.tn-elem__8471337711676524982032').css('display', 'table');
-                                            if ($minutesText) $('.tn-elem__8471337711676525020204').css('display', 'table');
-                                            if ($seconds) $('.tn-elem__8471337711676524983828').css('display', 'table');
-                                            if ($secondsText) $('.tn-elem__8471337711676525030457').css('display', 'table');
-                                        }
+                                    if (hours < "10") {
+                                        hours = "0" + hours;
                                     }
+                                    if (minutes < "10") {
+                                        minutes = "0" + minutes;
+                                    }
+                                    if (seconds < "10") {
+                                        seconds = "0" + seconds;
+                                    }
+                                    if ($days) $days.text(days);
+                                    if ($daysText) $daysText.text(declOfNum(days, [daysText1, daysText2, daysText5]));
+                                    if ($hours) $hours.text(hours);
+                                    if ($hoursText) $hoursText.text(declOfNum(hoursB, [hoursText1, hoursText2, hoursText5]));
+                                    if ($minutes) $minutes.text(minutes);
+                                    if ($minutesText) $minutesText.text(declOfNum(minutesB, [minutesText1, minutesText2, minutesText5]));
+                                    if ($seconds) $seconds.text(seconds);
+                                    if ($secondsText) $secondsText.text(declOfNum(secondsB, [secondsText1, secondsText2, secondsText5]));
+                                    if (!rend) {
+                                        rend = true;
+                                        if ($days) $('.tn-elem__8471337711676524966139').css('display', 'table');
+                                        if ($daysText) $('.tn-elem__8471337711676524992221').css('display', 'table');
+                                        if ($hours) $('.tn-elem__8471337711676524978902').css('display', 'table');
+                                        if ($hoursText) $('.tn-elem__8471337711676525012432').css('display', 'table');
+                                        if ($minutes) $('.tn-elem__8471337711676524982032').css('display', 'table');
+                                        if ($minutesText) $('.tn-elem__8471337711676525020204').css('display', 'table');
+                                        if ($seconds) $('.tn-elem__8471337711676524983828').css('display', 'table');
+                                        if ($secondsText) $('.tn-elem__8471337711676525030457').css('display', 'table');
+                                    }
+                                }
 
-                                    window.dispatchEvent(new CustomEvent('resize'));
-                                }, 500);
-                            });
+                                window.dispatchEvent(new CustomEvent('resize'));
+                            }, 500);
                         });
+
                     </script>
                 </div>
             </div>
