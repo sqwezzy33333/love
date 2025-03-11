@@ -665,9 +665,6 @@
                         script.src = 'https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js';
                         document.head.appendChild(script);
                         script.addEventListener('load', () => {
-                            alert('script loaded');
-
-                            alert($);
                             jQuery('head').append('<style>' + (function () {
                                 return ".tn-elem__8471337711676524966139 , .tn-elem__8471337711676524992221 , .tn-elem__8471337711676524978902 , .tn-elem__8471337711676525012432 , .tn-elem__8471337711676524982032 , .tn-elem__8471337711676525020204 , .tn-elem__8471337711676524983828 , .tn-elem__8471337711676525030457".replace(/\s/g, "").split(/,\s|,/g).filter(function (e) {
                                     return e
@@ -705,12 +702,10 @@
                                         return words[(number % 100 > 4 && number % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(number % 10 < 5) ? Math.abs(number) % 10 : 5]];
                                     }
 
-                                    alert('before_alert')
                                     setInterval(timer, 1e3);
                                     timer();
 
                                     function timer() {
-                                        alert('timer')
                                         let timeLeft = diffTZ ? parseInt((Date.parse(date) - (Date.now() - offsetTZUser * 60 * 60 * 1000)) / 1000) : parseInt((Date.parse(date) - (Date.now() + offsetTZUser * 60 * 60 * 1000)) / 1000),
                                             days = Math.floor(timeLeft / 86400),
                                             hours = Math.floor((timeLeft - ($days ? (days * 86400) : !$days && !true ? (days * 86400) : 0)) / 3600),
