@@ -719,11 +719,8 @@
                                     return words[(number % 100 > 4 && number % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(number % 10 < 5) ? Math.abs(number) % 10 : 5]];
                                 }
 
-                                function nullTime() {
-                                    return diffTZ ? (Date.parse(date) - (Date.now() - offsetTZUser * 60 * 60 * 1000)) / 1000 > 0 : (Date.parse(date) - (Date.now() + offsetTZUser * 60 * 60 * 1000)) / 1000 > 0
-                                }
 
-                                if (nullTime()) {
+                                if (true) {
                                     setInterval(timer, 1e3);
                                     timer();
 
